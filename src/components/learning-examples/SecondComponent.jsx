@@ -1,9 +1,11 @@
 import React from 'react';
 
-export default function SecondComponent() {
+function SecondComponent() {
   return (
     <div className="secondComponent">
       Second Component
     </div>
   );
 }
+
+export default SecondComponent;
