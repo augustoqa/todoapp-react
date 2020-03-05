@@ -14,10 +14,14 @@ class Counter extends Component {
   }
 
   render() {
+    const style = {fontSize: "50px", padding: "15px 30px"}
+
     return (
       <div className="counter">
         <button onClick={this.increment}>+1</button>
-        <span className="count">{this.state.counter}</span>
+        <span className="count" style={style}>
+            {this.state.counter}
+        </span>
       </div>
     );
   }
