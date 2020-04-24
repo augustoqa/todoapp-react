@@ -21,25 +21,19 @@ class LoginComponent extends Component {
 			password: ''
 		}
 
-		this.handlerUsernameChange = this.handlerUsernameChange.bind(this);
-		this.handlerPasswordChange = this.handlerPasswordChange.bind(this);
+		this.handlerChange = this.handlerChange.bind(this);
 	}
 
-	handlerUsernameChange(event) {
+	handlerChange(event) {
 		console.log(event.target.value);
-		this.setState({ username: event.target.value })
-	}
-
-	handlerPasswordChange(event) {
-		console.log(event.target.value);
-		this.setState({ password: event.target.value })
+		this.setState({ [event.target.name]: event.target.value })
 	}
 
 	render() {
 		return (
 			<div>
-				User Name: <input type="text" name="username" value={this.state.username} onChange={this.handlerUsernameChange}/>
-				Password: <input type="password" name="password" value={this.state.password} onChange={this.handlerPasswordChange}/>
+				User Name: <input type="text" name="username" value={this.state.username} onChange={this.handlerChange}/>
+				Password: <input type="password" name="password" value={this.state.password} onChange={this.handlerChange}/>
 				<button>Login</button>
 			</div>
 		)
